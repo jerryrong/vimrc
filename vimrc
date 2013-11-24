@@ -21,7 +21,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Plugin Bundles
+Bundle 'w0ng/vim-hybrid'
+Bundle 'nanotech/jellybeans.vim'
 
+Bundle 'scrooloose/nerdtree'
+Bundle 'SirVer/ultisnips'
+Bundle 'bling/vim-airline'
 
 if has_vundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -111,8 +116,10 @@ set foldcolumn=1
 set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10.5
 if has('gui_running')
     set guioptions-=T
+    colorscheme jellybeans
 else
-    colorscheme
+    set t_Co=256
+    colorscheme hybrid
 endif
 
 
@@ -142,6 +149,29 @@ let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsSnippetsDir="~/.vim/snippets"
 let g:UltiSnipsSnippetDirectories=["snippets", "UltiSnips"]
 
+" Airline
+set noshowmode
+let g:airline_theme = 'jellybeans'
+let g:airline_powerline_fonts = 1
+let g:airline_detect_modified = 1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_mode_map = {
+  \ '__' : '-',
+  \ 'n'  : 'N',
+  \ 'i'  : 'I',
+  \ 'R'  : 'R',
+  \ 'c'  : 'C',
+  \ 'v'  : 'V',
+  \ 'V'  : 'V',
+  \ '' : 'V',
+  \ 's'  : 'S',
+  \ 'S'  : 'S',
+  \ '' : 'S',
+  \ }
+let g:airline_section_b = '%{getcwd()}'
+let g:airline_section_c = '%t'
+
+
 " Tagbar
 nnoremap <silent> <F5> :TagbarToggle<CR>
 let g:tagbar_width = 30
@@ -169,5 +199,3 @@ let g:ctrlp_clear_cache_on_exit=0
 let g:ctrlp_cache_dir=$HOME.'/.vim/.cache/ctrlp'
 let g:ctrlp_extensions=['tag', 'bufferstag', 'quickfix', 'dir', 'rtscript']
 
-" Powerline
-let g:Powerline_symbols='fancy'
