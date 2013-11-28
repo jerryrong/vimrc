@@ -25,6 +25,7 @@ Bundle 'w0ng/vim-hybrid'
 Bundle 'nanotech/jellybeans.vim'
 
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'SirVer/ultisnips'
 Bundle 'bling/vim-airline'
 
@@ -88,7 +89,7 @@ set ruler                           " Show cursor position
 set showcmd                         " Show partial cmd in the last line of the srceen
 set showmatch                       " Show matching brackets/parenthesis 
 set matchtime=2
-set wrap
+set nowrap
 set textwidth=80
 set list                            " Show tabs and spaces and so on
 set listchars=tab:▸▸,eol:¬,extends:»,precedes:«
