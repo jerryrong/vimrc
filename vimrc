@@ -28,6 +28,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'SirVer/ultisnips'
 Bundle 'bling/vim-airline'
+Bundle 'Valloric/YouCompleteMe'
 
 if has_vundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -45,6 +46,7 @@ set backspace=indent,eol,start      " Make backspace work like most other apps
 set clipboard=unnamedplus           " Better cpoy and paste
 set history=1000                    " Set the number of lines of history VIM has to remember
 set timeoutlen=500                  " Time to wait for a command
+set ttimeoutlen=50
 set autoread                        " Set auto read when a file is changed outside of VIM
 set autowrite
 set hidden                          " Change buffer - without saving 
@@ -117,6 +119,7 @@ set foldcolumn=1
 set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10.5
 if has('gui_running')
     set guioptions-=T
+    set guioptions-=r
     colorscheme jellybeans
 else
     set t_Co=256
@@ -172,6 +175,10 @@ let g:airline_mode_map = {
 let g:airline_section_b = '%{getcwd()}'
 let g:airline_section_c = '%t'
 
+" Nerd_commenter
+let NERDCommentWholeLinesInVMode=2
+let NERDSpaceDelims=1
+let NERDRemoveExtraSpaces=1
 
 " Tagbar
 nnoremap <silent> <F5> :TagbarToggle<CR>
@@ -181,12 +188,6 @@ let g:tagbar_expand = 0
 let g:tagbar_foldlevel = 99
 let g:tagbar_iconchars = ['▾', '▸']
 let g:tagbar_autoshowtag = 1
-
-" Nerd_commenter
-let NERDCommentWholeLinesInVMode=2
-let NERDSpaceDelims=1
-let NERDRemoveExtraSpaces=1
-
 
 " DelimitMate
 let delimitMate_expand_cr=1
