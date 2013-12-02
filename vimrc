@@ -152,6 +152,9 @@ let NERDTreeIgnore=['.pyc$[[file]]','\~$'] " Ignore file
 let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsSnippetsDir="~/.vim/snippets"
 let g:UltiSnipsSnippetDirectories=["snippets", "UltiSnips"]
+let g:UltiSnipsExpandTrigger='<c-j>'
+let g:UltiSnipsJumpForwardTrigger='<c-j>'
+let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 " Airline
 set noshowmode
@@ -179,6 +182,10 @@ let g:airline_section_c = '%t'
 let NERDCommentWholeLinesInVMode=2
 let NERDSpaceDelims=1
 let NERDRemoveExtraSpaces=1
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_complete_in_comments = 1
 
 " Tagbar
 nnoremap <silent> <F5> :TagbarToggle<CR>
