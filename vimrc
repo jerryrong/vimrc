@@ -23,6 +23,7 @@ Bundle 'gmarik/vundle'
 " Plugin Bundles
 Bundle 'w0ng/vim-hybrid'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'chriskempson/base16-vim'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
@@ -117,10 +118,12 @@ set foldcolumn=1
 
 " Fonts and colors
 set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10.5
+set background=dark
 if has('gui_running')
     set guioptions-=T
     set guioptions-=r
-    colorscheme jellybeans
+    " colorscheme jellybeans
+    colorscheme base16-default
 else
     set t_Co=256
     colorscheme hybrid
@@ -158,7 +161,6 @@ let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 " Airline
 set noshowmode
-let g:airline_theme = 'jellybeans'
 let g:airline_powerline_fonts = 1
 let g:airline_detect_modified = 1
 let g:airline#extensions#whitespace#enabled = 0
