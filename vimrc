@@ -25,6 +25,7 @@ Bundle 'w0ng/vim-hybrid'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'chriskempson/base16-vim'
 
+Bundle 'jnwhiteh/vim-golang'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'SirVer/ultisnips'
