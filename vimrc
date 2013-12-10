@@ -21,7 +21,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Plugin Bundles
-Bundle 'w0ng/vim-hybrid'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'chriskempson/base16-vim'
 
@@ -124,11 +123,10 @@ set background=dark
 if has('gui_running')
     set guioptions-=T
     set guioptions-=r
-    " colorscheme jellybeans
     colorscheme base16-default
 else
     set t_Co=256
-    colorscheme hybrid
+    colorscheme jellybeans
 endif
 
 
@@ -180,7 +178,7 @@ let g:airline_mode_map = {
   \ '' : 'S',
   \ }
 let g:airline_section_b = '%{getcwd()}'
-let g:airline_section_c = '%t'
+" let g:airline_section_c = 
 
 " Nerd_commenter
 let NERDCommentWholeLinesInVMode=2
@@ -190,6 +188,8 @@ let NERDRemoveExtraSpaces=1
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_complete_in_comments = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
 " Ctrlp
 let g:ctrlp_cmd='CtrlPBuffer'
