@@ -21,8 +21,9 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Plugin Bundles
+Bundle 'zeis/vim-kolor'
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'chriskempson/base16-vim'
+Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'scrooloose/nerdtree'
@@ -122,8 +123,16 @@ set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10.5
 set background=dark
 if has('gui_running')
     set guioptions-=T
-    set guioptions-=r
-    colorscheme base16-default
+    set guioptions-=rl
+
+    " Setting for kolor
+    let g:kolor_italic=0
+    let g:kolor_alternative_matchparen=1
+
+    " Setting for solarized
+    let g:solarized_italic=0
+
+    colorscheme kolor
 else
     set t_Co=256
     colorscheme jellybeans
@@ -178,7 +187,6 @@ let g:airline_mode_map = {
   \ '' : 'S',
   \ }
 let g:airline_section_b = '%{getcwd()}'
-" let g:airline_section_c = 
 
 " Nerd_commenter
 let NERDCommentWholeLinesInVMode=2
@@ -187,9 +195,7 @@ let NERDRemoveExtraSpaces=1
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_complete_in_comments = 1
 let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
 " Ctrlp
 let g:ctrlp_cmd='CtrlPBuffer'
