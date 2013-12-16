@@ -123,7 +123,8 @@ set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10.5
 set background=dark
 if has('gui_running')
     set guioptions-=T
-    set guioptions-=rl
+    set guioptions-=r
+    set guioptions-=l
 
     " Setting for kolor
     let g:kolor_italic=0
