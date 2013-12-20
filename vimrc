@@ -32,6 +32,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'bling/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
 
 if has_vundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -124,7 +125,7 @@ set background=dark
 if has('gui_running')
     set guioptions-=T
     set guioptions-=r
-    set guioptions-=l
+    set guioptions-=L
 
     " Setting for kolor
     let g:kolor_italic=0
@@ -205,7 +206,6 @@ let g:ctrlp_clear_cache_on_exit=0
 let g:ctrlp_cache_dir=$HOME.'/.vim/.cache/ctrlp'
 let g:ctrlp_extensions=['tag', 'bufferstag', 'quickfix', 'dir', 'rtscript']
 
-" Doesn't install plugin settings
 " Tagbar
 nnoremap <silent> <F5> :TagbarToggle<CR>
 let g:tagbar_width = 30
@@ -215,6 +215,7 @@ let g:tagbar_foldlevel = 99
 let g:tagbar_iconchars = ['▾', '▸']
 let g:tagbar_autoshowtag = 1
 
+" Doesn't install plugin settings
 " DelimitMate
 let delimitMate_expand_cr=1
 let delimitMate_expand_space=1
