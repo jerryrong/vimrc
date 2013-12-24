@@ -21,7 +21,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Plugin Bundles
-Bundle 'zeis/vim-kolor'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'altercation/vim-colors-solarized'
 
@@ -127,14 +126,14 @@ if has('gui_running')
     set guioptions-=r
     set guioptions-=L
 
-    " Setting for kolor
-    let g:kolor_italic=0
-    let g:kolor_alternative_matchparen=1
-
     " Setting for solarized
     let g:solarized_italic=0
 
-    colorscheme kolor
+    let g:jellybeans_overrides = {
+    \    'Comment': {'attr': ''},
+    \}
+
+    colorscheme solarized
 else
     set t_Co=256
     colorscheme jellybeans
