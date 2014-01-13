@@ -32,6 +32,7 @@ Bundle 'bling/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'scrooloose/syntastic'
 
 if has_vundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -117,6 +118,9 @@ set laststatus=2                    " Always show the status line
 set foldmethod=indent               " Fold based on indent
 set nofoldenable
 set foldcolumn=1
+
+" Don't give the intro message
+set shortmess=filnxtToOI
 
 " Fonts and colors
 set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10.5
@@ -214,10 +218,10 @@ let g:tagbar_foldlevel = 99
 let g:tagbar_iconchars = ['▾', '▸']
 let g:tagbar_autoshowtag = 1
 
-" Doesn't install plugin settings
-" DelimitMate
-let delimitMate_expand_cr=1
-let delimitMate_expand_space=1
-let delimitMate_balance_matchpairs=1
+" Syntastic
+let g:syntastic_enable_balloons = 0
+let g:syntastic_mode_map = {'mode': 'active',
+                           \'active_filetypes': [],
+                           \'passive_filetypes': ['go'] }
 
 
