@@ -33,6 +33,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/syntastic'
+Bundle 'kovisoft/slimv'
 
 if has_vundle == 0
     echo "Installing Bundles, please ignore key map error messages"
