@@ -21,8 +21,11 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Plugin Bundles
+
+" Color schemes
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'chriskempson/base16-vim'
 
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'scrooloose/nerdtree'
@@ -34,6 +37,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/syntastic'
 Bundle 'kovisoft/slimv'
+Bundle 'othree/html5.vim'
 
 if has_vundle == 0
     echo "Installing Bundles, please ignore key map error messages"
