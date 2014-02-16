@@ -62,6 +62,7 @@ flags = [
 '-I',
 '.',
 '-I',
+'~/.vim/bundle/YouCompleteMe/cpp/ycm/ClangCompleter',
 '-isystem',
 '/usr/include',
 '-isystem',
