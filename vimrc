@@ -213,6 +213,7 @@ let g:ycm_seed_identifiers_with_syntax = 1
 
 " Ctrlp
 let g:ctrlp_cmd='CtrlPBuffer'
+let g:ctrlp_working_path_mode='rw'
 let g:ctrlp_clear_cache_on_exit=0
 let g:ctrlp_cache_dir=$HOME.'/.vim/.cache/ctrlp'
 let g:ctrlp_extensions=['tag', 'bufferstag', 'quickfix', 'dir', 'rtscript']
