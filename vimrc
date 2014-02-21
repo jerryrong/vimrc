@@ -99,6 +99,7 @@ set number                          " Display line numbers
 set ruler                           " Show cursor position
 set showcmd                         " Show partial cmd in the last line of the srceen
 set showmatch                       " Show matching brackets/parenthesis 
+set relativenumber
 set matchtime=2
 set nowrap
 set textwidth=80
@@ -130,22 +131,24 @@ set shortmess=filnxtToOI
 " Fonts and colors
 set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10.5
 set background=dark
+
+" Setting for solarized
+let g:solarized_menu=0
+let g:solarized_italic=0
+let g:solarized_termcolors=256
+
+" Setting for jellybeans
+let g:jellybeans_overrides = {
+\    'Comment': {'attr': ''},
+\}
+
 if has('gui_running')
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
-
-    " Setting for solarized
-    let g:solarized_italic=0
-
-    let g:jellybeans_overrides = {
-    \    'Comment': {'attr': ''},
-    \}
     colorscheme solarized
-
     set lines=100
     set columns=85
-    
 else
     set t_Co=256
     colorscheme jellybeans
