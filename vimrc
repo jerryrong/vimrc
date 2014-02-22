@@ -129,7 +129,8 @@ set foldcolumn=1
 set shortmess=filnxtToOI
 
 " Fonts and colors
-set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10.5
+" set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10.5
+set guifont=Fantasque\ Sans\ Mono\ 11.5
 set background=dark
 
 " Setting for solarized
@@ -146,7 +147,8 @@ if has('gui_running')
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
-    colorscheme solarized
+    " colorscheme solarized
+    colorscheme base16-tomorrow
     set lines=100
     set columns=85
 else
