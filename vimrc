@@ -27,7 +27,10 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chriskempson/base16-vim'
 
+" Syntax
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'othree/html5.vim'
+
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'SirVer/ultisnips'
@@ -37,7 +40,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/syntastic'
 Bundle 'kovisoft/slimv'
-Bundle 'othree/html5.vim'
+Bundle 'Raimondi/delimitMate'
 
 if has_vundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -150,7 +153,7 @@ if has('gui_running')
     " colorscheme solarized
     colorscheme base16-tomorrow
     set lines=100
-    set columns=85
+    set columns=88
 else
     set t_Co=256
     colorscheme jellybeans
