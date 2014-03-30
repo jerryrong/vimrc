@@ -24,8 +24,8 @@ Bundle 'gmarik/vundle'
 
 " Color schemes
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'chriskempson/base16-vim'
+" Bundle 'altercation/vim-colors-solarized'
 
 " Syntax
 Bundle 'jnwhiteh/vim-golang'
@@ -34,6 +34,7 @@ Bundle 'othree/html5.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'bling/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
