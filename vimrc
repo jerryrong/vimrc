@@ -22,26 +22,42 @@ Bundle 'gmarik/vundle'
 
 " Plugin Bundles
 
-" Color schemes
+" Color schemes and UI
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'chriskempson/base16-vim'
-" Bundle 'altercation/vim-colors-solarized'
+Bundle 'bling/vim-airline'
+
+" Code completion engine
+Bundle 'Valloric/YouCompleteMe'
+
+" Filesystem exploring
+Bundle 'scrooloose/nerdtree'
+
+" Fuzzy file, buffer, mru, ... finder
+Bundle 'kien/ctrlp.vim'
+
+" Automatic closing of quotes, parenthesis, brackets, etc.
+Bundle 'Raimondi/delimitMate'
+
+" Syntax checking
+Bundle 'scrooloose/syntastic'
+
+" Snippets
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+
+" Comment
+Bundle 'scrooloose/nerdcommenter'
+
+" Tags of source code files
+Bundle 'majutsushi/tagbar'
+
+" Lisp interaction mode
+Bundle 'kovisoft/slimv'
 
 " Syntax
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'othree/html5.vim'
-
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
-Bundle 'bling/vim-airline'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'kien/ctrlp.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'scrooloose/syntastic'
-Bundle 'kovisoft/slimv'
-Bundle 'Raimondi/delimitMate'
 
 if has_vundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -240,7 +256,7 @@ let g:tagbar_autoshowtag = 1
 let g:syntastic_enable_balloons = 0
 let g:syntastic_mode_map = {'mode': 'active',
                            \'active_filetypes': [],
-                           \'passive_filetypes': ['go'] }
+                           \'passive_filetypes': [] }
 
 " DelimitMate
 let delimitMate_expand_cr = 1
