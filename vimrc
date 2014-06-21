@@ -119,7 +119,6 @@ set number                          " Display line numbers
 set ruler                           " Show cursor position
 set showcmd                         " Show partial cmd in the last line of the srceen
 set showmatch                       " Show matching brackets/parenthesis 
-set relativenumber
 set matchtime=2
 set nowrap
 set textwidth=80
