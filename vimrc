@@ -140,7 +140,7 @@ set autoindent
 set laststatus=2                    " Always show the status line
 
 " Folding settings
-set foldmethod=indent               " Fold based on indent
+set foldmethod=syntax               " Fold based on indent
 set nofoldenable
 set foldcolumn=1
 
@@ -153,9 +153,9 @@ set guifont=Fantasque\ Sans\ Mono\ 11.5
 set background=dark
 
 " Setting for solarized
-let g:solarized_menu=0
-let g:solarized_italic=0
-let g:solarized_termcolors=256
+" let g:solarized_menu=0
+" let g:solarized_italic=0
+" let g:solarized_termcolors=256
 
 " Setting for jellybeans
 let g:jellybeans_overrides = {
