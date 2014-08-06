@@ -25,6 +25,9 @@ Bundle 'gmarik/vundle'
 " Color schemes and UI
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'chriskempson/base16-vim'
+" Bundle 'altercation/vim-colors-solarized'
+" Bundle 'jnurmine/Zenburn'
+" Bundle 'jonathanfilip/vim-lucius'
 Bundle 'bling/vim-airline'
 
 " Code completion engine
