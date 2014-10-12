@@ -28,8 +28,7 @@ Plugin 'gmarik/vundle'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'jonathanfilip/vim-lucius'
-" Plugin 'altercation/vim-colors-solarized'
-" Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 
 " Code completion engine
