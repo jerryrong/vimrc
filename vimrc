@@ -3,7 +3,8 @@
 """"""""""""""""""""""""""""""""""""""""
 " => Vundle plugin manager
 """"""""""""""""""""""""""""""""""""""""
-set nocompatible                    " No Vi-compatible
+" No Vi-compatible
+set nocompatible
 
 let has_vundle=1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
@@ -14,58 +15,61 @@ if !filereadable(vundle_readme)
     let has_vundle=0
 endif
 
-filetype off                        " Required!
+" Required!
+filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 " Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Plugin Bundles
 
 " Color schemes and UI
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'chriskempson/base16-vim'
-Bundle 'jonathanfilip/vim-lucius'
-" Bundle 'altercation/vim-colors-solarized'
-" Bundle 'jnurmine/Zenburn'
-Bundle 'bling/vim-airline'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'chriskempson/base16-vim'
+Plugin 'jonathanfilip/vim-lucius'
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'jnurmine/Zenburn'
+Plugin 'bling/vim-airline'
 
 " Code completion engine
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " Filesystem exploring
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 " Fuzzy file, buffer, mru, ... finder
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
 " Automatic closing of quotes, parenthesis, brackets, etc.
-Bundle 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 
 " Syntax checking
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " Snippets
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " Comment
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
 " Tags of source code files
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 
 " Lisp interaction mode
-Bundle 'kovisoft/slimv'
+Plugin 'kovisoft/slimv'
 
 " Syntax
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'othree/html5.vim'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'othree/html5.vim'
+
+call vundle#end()
 
 if has_vundle == 0
     echo "Installing Bundles, please ignore key map error messages"
     echo ""
-    :BundleInstall
+    :PluginInstall
 endif
 
 
