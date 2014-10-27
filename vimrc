@@ -169,11 +169,6 @@ set shortmess=filnxtToOI
 set guifont=Fantasque\ Sans\ Mono\ 11.5
 set background=dark
 
-" " Setting for solarized
-" " let g:solarized_menu=0
-" " let g:solarized_italic=0
-" " let g:solarized_termcolors=256
-
 " Setting for jellybeans
 let g:jellybeans_overrides = {
 \    'Comment': {'attr': ''},
@@ -184,8 +179,14 @@ if has('gui_running')
     set guioptions-=r
     set guioptions-=L
     set guioptions-=m
-    " colorscheme solarized
-    colorscheme base16-tomorrow
+
+    " Setting for solarized
+    let g:solarized_menu=0
+    let g:solarized_italic=0
+    let g:solarized_termcolors=256
+
+    colorscheme solarized
+    "colorscheme base16-tomorrow
     set lines=100
     set columns=88
 else
