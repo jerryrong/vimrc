@@ -47,8 +47,8 @@ Plugin 'altercation/vim-colors-solarized'
 "Plugin 'scrooloose/syntastic'
 
 " Snippets
-"Plugin 'SirVer/ultisnips'
-"Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " Comment
 "Plugin 'scrooloose/nerdcommenter'
@@ -216,10 +216,10 @@ map <c-h> <c-w>h
 " let NERDTreeDirArrows=1
 " let NERDTreeIgnore=['.pyc$[[file]]','\~$'] " Ignore file
 
-" " UltiSnips
-" let g:UltiSnipsUsePythonVersion = 2
-" let g:UltiSnipsSnippetsDir="~/.vim/mysnippets"
-" let g:UltiSnipsSnippetDirectories=["mysnippets", "UltiSnips"]
+" UltiSnips
+let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsSnippetsDir="~/.vim/mysnippets"
+let g:UltiSnipsSnippetDirectories=["mysnippets", "UltiSnips"]
 " let g:UltiSnipsExpandTrigger='<c-j>'
 " let g:UltiSnipsJumpForwardTrigger='<c-j>'
 " let g:UltiSnipsJumpBackwardTrigger='<c-k>'
