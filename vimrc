@@ -39,6 +39,7 @@ Plugin 'altercation/vim-colors-solarized'
 
 " Fuzzy file, buffer, mru, ... finder
 "Plugin 'kien/ctrlp.vim'
+Plugin 'Shougo/unite.vim'
 
 " Automatic closing of quotes, parenthesis, brackets, etc.
 "Plugin 'Raimondi/delimitMate'
@@ -114,6 +115,7 @@ set t_vb=
 " Turn on the wild menu
 set wildmenu
 set wildmode=longest,full
+set wildignore=*.o,*~,*.pyc
 
 
 """"""""""""""""""""""""""""""""""""""""
