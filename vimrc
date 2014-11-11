@@ -39,6 +39,8 @@ Plugin 'altercation/vim-colors-solarized'
 
 " Fuzzy file, buffer, mru, ... finder
 "Plugin 'kien/ctrlp.vim'
+
+" Fuzzy search, don't limited to file, buffer
 Plugin 'Shougo/unite.vim'
 
 " Automatic closing of quotes, parenthesis, brackets, etc.
@@ -67,7 +69,7 @@ Plugin 'honza/vim-snippets'
 call vundle#end()
 
 if has_vundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
+    echo "Installing..."
     echo ""
     :PluginInstall
 endif
@@ -138,7 +140,7 @@ set fileformats=unix,dos,mac
 syntax enable
 set number
 set ruler
-set showcmd                         " Show partial cmd in the last line of the srceen
+set showcmd
 set showmatch
 set matchtime=2
 set nowrap
@@ -156,10 +158,10 @@ set smarttab
 set autoindent
 
 " Status line
-set laststatus=2                    " Always show the status line
+set laststatus=2
 
 " " Folding settings
-" set foldmethod=syntax               " Fold based on indent
+" set foldmethod=syntax
 " set nofoldenable
 " set foldcolumn=1
 
@@ -210,6 +212,18 @@ map <c-h> <c-w>h
 """"""""""""""""""""""""""""""""""""""""
 " => Plugins settings
 """"""""""""""""""""""""""""""""""""""""
+
+" Unite
+let g:unite_force_overwrite_statusline = 0
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#custom#profile('default', 'context', {
+\   'start_insert': 1,
+\   'winheight': 10,
+\   'direction': 'botright',
+\})
+nnoremap <C-p> :Unite file_rec<CR>
+
+
 " " Nerdtree
 " nnoremap <silent> <F4> :NERDTreeToggle<CR>
 " let NERDTreeChDirMode=2
