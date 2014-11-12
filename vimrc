@@ -222,8 +222,12 @@ call unite#custom#profile('default', 'context', {
 \   'winheight': 10,
 \   'direction': 'botright',
 \})
-call unite#custom#source('file_rec/async,buffer', 'ignore_pattern',
-    \join(['\.git/','\.pyc','.o']))
+call unite#custom#source('file,file_rec,file_rec/async,buffer',
+    \'ignore_pattern', join([
+    \'\.git/',
+    \'\.pyc',
+    \'\.o',
+    \],'\|'))
 nnoremap <C-p> :Unite file_rec/async<CR>
 
 
