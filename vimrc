@@ -42,6 +42,7 @@ Plugin 'altercation/vim-colors-solarized'
 
 " Fuzzy search, don't limited to file, buffer
 Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimproc.vim'
 
 " Automatic closing of quotes, parenthesis, brackets, etc.
 "Plugin 'Raimondi/delimitMate'
@@ -221,7 +222,9 @@ call unite#custom#profile('default', 'context', {
 \   'winheight': 10,
 \   'direction': 'botright',
 \})
-nnoremap <C-p> :Unite file_rec<CR>
+call unite#custom#source('file_rec/async,buffer', 'ignore_pattern',
+    \join(['\.git/','\.pyc','.o']))
+nnoremap <C-p> :Unite file_rec/async<CR>
 
 
 " " Nerdtree
