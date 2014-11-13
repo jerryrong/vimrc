@@ -209,6 +209,10 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+" Make search results appear in the middle on the screen
+nnoremap n nzz
+nnoremap N Nzz
+
 
 """"""""""""""""""""""""""""""""""""""""
 " => Plugins settings
