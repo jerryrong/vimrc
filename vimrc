@@ -24,12 +24,21 @@ Plugin 'gmarik/vundle'
 
 " Plugin Bundles
 
-" Color schemes and UI
+" Color schemes
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'altercation/vim-colors-solarized'
-"Plugin 'bling/vim-airline'
+
+" Fuzzy search, don't limited to file, buffer
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimproc.vim'
+
+" Statusline
+Plugin 'bling/vim-airline'
+
+" Tags of source code files
+Plugin 'majutsushi/tagbar'
 
 " Code completion engine
 "Plugin 'Valloric/YouCompleteMe'
@@ -39,10 +48,6 @@ Plugin 'altercation/vim-colors-solarized'
 
 " Fuzzy file, buffer, mru, ... finder
 "Plugin 'kien/ctrlp.vim'
-
-" Fuzzy search, don't limited to file, buffer
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimproc.vim'
 
 " Automatic closing of quotes, parenthesis, brackets, etc.
 "Plugin 'Raimondi/delimitMate'
@@ -56,9 +61,6 @@ Plugin 'honza/vim-snippets'
 
 " Comment
 "Plugin 'scrooloose/nerdcommenter'
-
-" Tags of source code files
-"Plugin 'majutsushi/tagbar'
 
 " Lisp interaction mode
 "Plugin 'kovisoft/slimv'
@@ -146,6 +148,7 @@ set showmatch
 set matchtime=2
 set nowrap
 set textwidth=80
+set laststatus=2
 
 " Show tabs and spaces and so on
 set list
@@ -157,9 +160,6 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 set autoindent
-
-" Status line
-set laststatus=2
 
 " " Folding settings
 " set foldmethod=syntax
@@ -217,7 +217,6 @@ nnoremap N Nzz
 """"""""""""""""""""""""""""""""""""""""
 " => Plugins settings
 """"""""""""""""""""""""""""""""""""""""
-
 " Unite
 let g:unite_force_overwrite_statusline = 0
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -234,14 +233,35 @@ call unite#custom#source('file,file_rec,file_rec/async,buffer',
     \],'\|'))
 nnoremap <C-p> :Unite file_rec/async<CR>
 
+" Airline
+set noshowmode
+let g:airline_powerline_fonts = 1
+let g:airline_detect_modified = 1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
+let g:airline_section_b = '%{getcwd()}'
 
-" " Nerdtree
-" nnoremap <silent> <F4> :NERDTreeToggle<CR>
-" let NERDTreeChDirMode=2
-" let NERDTreeShowBookmarks=1
-" let NERDTreeWinSize=30
-" let NERDTreeDirArrows=1
-" let NERDTreeIgnore=['.pyc$[[file]]','\~$'] " Ignore file
+" Tagbar
+nnoremap <silent> <F5> :TagbarToggle<CR>
+let g:tagbar_width = 30
+let g:tagbar_autofocus = 1
+let g:tagbar_expand = 0
+let g:tagbar_foldlevel = 99
+let g:tagbar_iconchars = ['▾', '▸']
+let g:tagbar_autoshowtag = 1
 
 " UltiSnips
 let g:UltiSnipsUsePythonVersion = 2
@@ -251,25 +271,13 @@ let g:UltiSnipsSnippetDirectories=["mysnippets", "UltiSnips"]
 " let g:UltiSnipsJumpForwardTrigger='<c-j>'
 " let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
-" " Airline
-" set noshowmode
-" let g:airline_powerline_fonts = 1
-" let g:airline_detect_modified = 1
-" let g:airline#extensions#whitespace#enabled = 0
-" let g:airline_mode_map = {
-  " \ '__' : '-',
-  " \ 'n'  : 'N',
-  " \ 'i'  : 'I',
-  " \ 'R'  : 'R',
-  " \ 'c'  : 'C',
-  " \ 'v'  : 'V',
-  " \ 'V'  : 'V',
-  " \ '' : 'V',
-  " \ 's'  : 'S',
-  " \ 'S'  : 'S',
-  " \ '' : 'S',
-  " \ }
-" let g:airline_section_b = '%{getcwd()}'
+" " Nerdtree
+" nnoremap <silent> <F4> :NERDTreeToggle<CR>
+" let NERDTreeChDirMode=2
+" let NERDTreeShowBookmarks=1
+" let NERDTreeWinSize=30
+" let NERDTreeDirArrows=1
+" let NERDTreeIgnore=['.pyc$[[file]]','\~$'] " Ignore file
 
 " " Nerd_commenter
 " let NERDCommentWholeLinesInVMode=2
@@ -287,15 +295,6 @@ let g:UltiSnipsSnippetDirectories=["mysnippets", "UltiSnips"]
 " let g:ctrlp_clear_cache_on_exit=0
 " let g:ctrlp_cache_dir=$HOME.'/.vim/.cache/ctrlp'
 " let g:ctrlp_extensions=['tag', 'bufferstag', 'quickfix', 'dir', 'rtscript']
-
-" " Tagbar
-" nnoremap <silent> <F5> :TagbarToggle<CR>
-" let g:tagbar_width = 30
-" let g:tagbar_autofocus = 1
-" let g:tagbar_expand = 0
-" let g:tagbar_foldlevel = 99
-" let g:tagbar_iconchars = ['▾', '▸']
-" let g:tagbar_autoshowtag = 1
 
 " " Syntastic
 " let g:syntastic_enable_balloons = 0
