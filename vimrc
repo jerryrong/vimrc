@@ -40,11 +40,11 @@ Plugin 'bling/vim-airline'
 " Tags of source code files
 Plugin 'majutsushi/tagbar'
 
+" Filesystem exploring
+Plugin 'scrooloose/nerdtree'
+
 " Code completion engine
 "Plugin 'Valloric/YouCompleteMe'
-
-" Filesystem exploring
-"Plugin 'scrooloose/nerdtree'
 
 " Fuzzy file, buffer, mru, ... finder
 "Plugin 'kien/ctrlp.vim'
@@ -61,9 +61,6 @@ Plugin 'honza/vim-snippets'
 
 " Comment
 "Plugin 'scrooloose/nerdcommenter'
-
-" Lisp interaction mode
-"Plugin 'kovisoft/slimv'
 
 " Syntax
 "Plugin 'jnwhiteh/vim-golang'
@@ -271,13 +268,13 @@ let g:UltiSnipsSnippetDirectories=["mysnippets", "UltiSnips"]
 " let g:UltiSnipsJumpForwardTrigger='<c-j>'
 " let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
-" " Nerdtree
-" nnoremap <silent> <F4> :NERDTreeToggle<CR>
-" let NERDTreeChDirMode=2
-" let NERDTreeShowBookmarks=1
-" let NERDTreeWinSize=30
-" let NERDTreeDirArrows=1
-" let NERDTreeIgnore=['.pyc$[[file]]','\~$'] " Ignore file
+" Nerdtree
+nnoremap <silent> <F4> :NERDTreeToggle<CR>
+let NERDTreeChDirMode=2
+let NERDTreeShowBookmarks=1
+let NERDTreeWinSize=30
+let NERDTreeDirArrows=1
+let NERDTreeIgnore=['.pyc$[[file]]','\~$'] " Ignore file
 
 " " Nerd_commenter
 " let NERDCommentWholeLinesInVMode=2
