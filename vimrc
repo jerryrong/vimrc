@@ -43,6 +43,10 @@ Plugin 'majutsushi/tagbar'
 " Filesystem exploring
 Plugin 'scrooloose/nerdtree'
 
+" Comment
+"Plugin 'scrooloose/nerdcommenter'
+Plugin 'tomtom/tcomment_vim'
+
 " Code completion engine
 "Plugin 'Valloric/YouCompleteMe'
 
@@ -58,9 +62,6 @@ Plugin 'scrooloose/nerdtree'
 " Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-
-" Comment
-"Plugin 'scrooloose/nerdcommenter'
 
 " Syntax
 "Plugin 'jnwhiteh/vim-golang'
