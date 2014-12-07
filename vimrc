@@ -43,18 +43,16 @@ Plugin 'majutsushi/tagbar'
 " Filesystem exploring
 Plugin 'scrooloose/nerdtree'
 
+" Automatic closing of quotes, parenthesis, brackets, etc.
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-surround'
+
 " Comment
 "Plugin 'scrooloose/nerdcommenter'
 Plugin 'tomtom/tcomment_vim'
 
 " Code completion engine
 "Plugin 'Valloric/YouCompleteMe'
-
-" Fuzzy file, buffer, mru, ... finder
-"Plugin 'kien/ctrlp.vim'
-
-" Automatic closing of quotes, parenthesis, brackets, etc.
-"Plugin 'Raimondi/delimitMate'
 
 " Syntax checking
 "Plugin 'scrooloose/syntastic'
@@ -277,6 +275,9 @@ let NERDTreeWinSize=30
 let NERDTreeDirArrows=1
 let NERDTreeIgnore=['.pyc$[[file]]','\~$'] " Ignore file
 
+" DelimitMate
+let delimitMate_expand_cr = 1
+
 " " Nerd_commenter
 " let NERDCommentWholeLinesInVMode=2
 " let NERDSpaceDelims=1
@@ -299,7 +300,4 @@ let NERDTreeIgnore=['.pyc$[[file]]','\~$'] " Ignore file
 " let g:syntastic_mode_map = {'mode': 'active',
                            " \'active_filetypes': [],
                            " \'passive_filetypes': [] }
-
-" " DelimitMate
-" let delimitMate_expand_cr = 1
 
