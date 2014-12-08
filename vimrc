@@ -62,8 +62,9 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 " Syntax
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/html5.vim'
 "Plugin 'jnwhiteh/vim-golang'
-"Plugin 'othree/html5.vim'
 
 call vundle#end()
 
@@ -200,10 +201,10 @@ endif
 " => Key mapping
 """"""""""""""""""""""""""""""""""""""""
 " Bind Ctrl+<movement> keys to move around the windows
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
 
 " Make search results appear in the middle on the screen
 nnoremap n nzz
