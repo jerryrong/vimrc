@@ -48,7 +48,6 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 
 " Comment
-"Plugin 'scrooloose/nerdcommenter'
 Plugin 'tomtom/tcomment_vim'
 
 " Code completion engine
@@ -279,22 +278,10 @@ let NERDTreeIgnore=['.pyc$[[file]]','\~$'] " Ignore file
 " DelimitMate
 let delimitMate_expand_cr = 1
 
-" " Nerd_commenter
-" let NERDCommentWholeLinesInVMode=2
-" let NERDSpaceDelims=1
-" let NERDRemoveExtraSpaces=1
-
 " " YouCompleteMe
 " let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 " let g:ycm_autoclose_preview_window_after_completion = 1
 " let g:ycm_seed_identifiers_with_syntax = 1
-
-" " Ctrlp
-" let g:ctrlp_cmd='CtrlPBuffer'
-" let g:ctrlp_working_path_mode='rw'
-" let g:ctrlp_clear_cache_on_exit=0
-" let g:ctrlp_cache_dir=$HOME.'/.vim/.cache/ctrlp'
-" let g:ctrlp_extensions=['tag', 'bufferstag', 'quickfix', 'dir', 'rtscript']
 
 " " Syntastic
 " let g:syntastic_enable_balloons = 0
