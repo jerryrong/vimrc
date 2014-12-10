@@ -142,7 +142,7 @@ set ruler
 set showcmd
 set showmatch
 set matchtime=2
-set nowrap
+set wrap
 set textwidth=80
 set laststatus=2
 
@@ -209,6 +209,13 @@ nnoremap <c-h> <c-w>h
 nnoremap n nzz
 nnoremap N Nzz
 
+" Map j and k keys operate on display line
+nnoremap k gk
+nnoremap j gj
+
+" Map reverse character search command to another key
+noremap \ ,
+
 
 """"""""""""""""""""""""""""""""""""""""
 " => Plugins settings
@@ -222,11 +229,11 @@ call unite#custom#profile('default', 'context', {
 \   'direction': 'botright',
 \})
 call unite#custom#source('file,file_rec,file_rec/async,buffer',
-    \'ignore_pattern', join([
-    \'\.git/',
-    \'\.pyc',
-    \'\.o',
-    \],'\|'))
+\   'ignore_pattern', join([
+\   '\.git/',
+\   '\.pyc',
+\   '\.o',
+\   ],'\|'))
 nnoremap <C-p> :Unite file_rec/async<CR>
 
 " Airline
