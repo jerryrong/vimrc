@@ -63,7 +63,7 @@ Plugin 'honza/vim-snippets'
 " Syntax
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
-"Plugin 'jnwhiteh/vim-golang'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
