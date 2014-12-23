@@ -51,10 +51,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'tomtom/tcomment_vim'
 
 " Code completion engine
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " Syntax checking
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
@@ -270,9 +270,9 @@ let g:tagbar_autoshowtag = 1
 let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsSnippetsDir="~/.vim/mysnippets"
 let g:UltiSnipsSnippetDirectories=["mysnippets", "UltiSnips"]
-" let g:UltiSnipsExpandTrigger='<c-j>'
-" let g:UltiSnipsJumpForwardTrigger='<c-j>'
-" let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+let g:UltiSnipsExpandTrigger='<c-j>'
+let g:UltiSnipsJumpForwardTrigger='<c-j>'
+let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 " Nerdtree
 nnoremap <silent> <F4> :NERDTreeToggle<CR>
@@ -285,14 +285,14 @@ let NERDTreeIgnore=['.pyc$[[file]]','\~$'] " Ignore file
 " DelimitMate
 let delimitMate_expand_cr = 1
 
-" " YouCompleteMe
-" let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-" let g:ycm_autoclose_preview_window_after_completion = 1
-" let g:ycm_seed_identifiers_with_syntax = 1
+" YouCompleteMe
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 
-" " Syntastic
-" let g:syntastic_enable_balloons = 0
-" let g:syntastic_mode_map = {'mode': 'active',
-                           " \'active_filetypes': [],
-                           " \'passive_filetypes': [] }
+" Syntastic
+let g:syntastic_enable_balloons = 0
+let g:syntastic_mode_map = {'mode': 'active',
+                            \'active_filetypes': [],
+                            \'passive_filetypes': [] }
 
