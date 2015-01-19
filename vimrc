@@ -79,6 +79,17 @@ endif
 """"""""""""""""""""""""""""""""""""""""
 filetype plugin indent on
 
+function! GetRunningOS()
+    let os=substitute(system('uname'), '\n', '', '')
+    if os == 'Darwin' || os == 'Mac'
+        return 'mac'
+    elseif os == 'Linux'
+        return 'linux'
+    endif
+endfunction
+
+let platform=GetRunningOS()
+
 " Rebind <Leader> key
 let mapleader = ","
 
@@ -127,7 +138,11 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese,cp936,latin-1
 set fileencoding=utf-8
 
-language messages en_US.utf8
+if platform=='linux'
+    language messages en_US.utf8
+elseif platform=='mac'
+    language messages en_US.UTF-8
+endif
 
 " Auto detect file format
 set fileformats=unix,dos,mac
@@ -166,8 +181,11 @@ set autoindent
 set shortmess=filnxtToOI
 
 " Fonts and colors
-" set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10.5
-set guifont=Fantasque\ Sans\ Mono\ 11.5
+if platform == 'mac'
+    set guifont=Monaco:h11
+else
+    set guifont=Fantasque\ Sans\ Mono\ 11.5
+endif
 set background=dark
 
 " Setting for jellybeans
