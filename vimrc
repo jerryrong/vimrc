@@ -216,6 +216,9 @@ nnoremap j gj
 " Map reverse character search command to another key
 noremap \ ,
 
+" Remap jk to escape insert mode
+inoremap jk <ESC>
+
 
 """"""""""""""""""""""""""""""""""""""""
 " => Plugins settings
