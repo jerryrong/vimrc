@@ -234,8 +234,8 @@ nnoremap j gj
 " Map reverse character search command to another key
 noremap \ ,
 
-" Remap jk to escape insert mode
-inoremap jk <ESC>
+" Remap jj to escape insert mode
+inoremap jj <ESC>
 
 
 """"""""""""""""""""""""""""""""""""""""
