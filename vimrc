@@ -26,7 +26,7 @@ Plugin 'gmarik/vundle'
 
 " Color schemes
 Plugin 'nanotech/jellybeans.vim'
-Plugin 'chriskempson/base16-vim'
+" Plugin 'chriskempson/base16-vim'
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'altercation/vim-colors-solarized'
 
@@ -186,6 +186,7 @@ if platform == 'mac'
 else
     set guifont=Fantasque\ Sans\ Mono\ 11.5
 endif
+
 set background=dark
 
 " Setting for jellybeans
@@ -202,14 +203,11 @@ if has('gui_running')
     " Setting for solarized
     let g:solarized_menu=0
     let g:solarized_italic=0
-    let g:solarized_termcolors=256
 
     colorscheme solarized
-    "colorscheme base16-tomorrow
     set lines=100
     set columns=88
 else
-    set t_Co=256
     colorscheme jellybeans
 endif
 
