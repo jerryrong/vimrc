@@ -182,7 +182,7 @@ set shortmess=filnxtToOI
 
 " Fonts and colors
 if platform == 'mac'
-    set guifont=Monaco:h11
+    set guifont=Monaco\ for\ Powerline:h11
 else
     set guifont=Fantasque\ Sans\ Mono\ 11.5
 endif
