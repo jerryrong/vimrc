@@ -138,9 +138,9 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese,cp936,latin-1
 set fileencoding=utf-8
 
-if platform=='linux'
+if platform == 'linux'
     language messages en_US.utf8
-elseif platform=='mac'
+elseif platform == 'mac'
     language messages en_US.UTF-8
 endif
 
@@ -308,6 +308,10 @@ let delimitMate_expand_cr = 1
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
+" Handle ycm and pyenv problem
+if platform == 'mac'
+    let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+endif
 
 " Syntastic
 let g:syntastic_enable_balloons = 0
