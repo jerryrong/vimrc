@@ -94,7 +94,11 @@ let platform=GetRunningOS()
 let mapleader = ","
 
 set backspace=indent,eol,start
-set clipboard=unnamedplus
+if platform == 'mac'
+    set clipboard=unnamed
+else
+    set clipboard=unnamedplus
+endif
 set history=1000
 
 " Time to wait for a command
@@ -163,7 +167,8 @@ set laststatus=2
 
 " Show tabs and spaces and so on
 set list
-set listchars=tab:▸▸,eol:¬,extends:»,precedes:«
+" set listchars=tab:▸▸,eol:¬,extends:»,precedes:«
+set listchars=tab:→\ ,eol:¬,extends:»,precedes:«
 
 " Indent and tab
 set expandtab
@@ -204,7 +209,11 @@ if has('gui_running')
     let g:solarized_menu=0
     let g:solarized_italic=0
 
-    colorscheme solarized
+    if platform == 'mac'
+        colorscheme jellybeans
+    else
+        colorscheme solarized
+    endif
     set lines=100
     set columns=88
 else
