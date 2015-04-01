@@ -26,7 +26,7 @@ Plugin 'gmarik/vundle'
 
 " Color schemes
 Plugin 'nanotech/jellybeans.vim'
-" Plugin 'chriskempson/base16-vim'
+Plugin 'w0ng/vim-hybrid'
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'altercation/vim-colors-solarized'
 
