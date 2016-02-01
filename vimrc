@@ -34,7 +34,8 @@ Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
 
 " Statusline
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Tags of source code files
 Plugin 'majutsushi/tagbar'
