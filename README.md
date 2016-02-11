@@ -1,4 +1,6 @@
 # Installation
-	cd ~
-	git clone https://github.com/jerryrong/vimrc
-	ln -s .vim/vimrc .vimrc
+```zsh
+    cd ~
+    git clone https://github.com/jerryrong/vimrc .vim
+    ln -s ~/.vim/vimrc ~/.vimrc
+```
