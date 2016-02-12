@@ -127,6 +127,7 @@ set hlsearch
 set noerrorbells
 set novisualbell
 set t_vb=
+set belloff=all
 
 " Turn on the wild menu
 set wildmenu
@@ -266,7 +267,11 @@ nnoremap <C-p> :Unite file_rec/async<CR>
 
 " Airline
 set noshowmode
-let g:airline_powerline_fonts = 1
+if has('gui_running')
+    let g:airline_powerline_fonts = 1
+else
+    let g:airline_powerline_fonts = 0
+endif
 let g:airline_detect_modified = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
