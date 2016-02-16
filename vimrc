@@ -327,6 +327,8 @@ if platform == 'mac'
     let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 endif
 
+let g:ycm_python_binary_path = exepath('python')
+
 " Syntastic
 let g:syntastic_enable_balloons = 0
 let g:syntastic_mode_map = {'mode': 'active',
