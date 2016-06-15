@@ -64,6 +64,9 @@ Plugin 'honza/vim-snippets'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
 Plugin 'fatih/vim-go'
+" Support Markdown syntax
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()
 
