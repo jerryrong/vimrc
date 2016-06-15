@@ -325,7 +325,6 @@ let delimitMate_expand_cr = 1
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 " Specify which python interpreter to use to run jedi completion library
 let g:ycm_python_binary_path = exepath('python')
 " Don't ask about loading certain .ycm_extra_conf.py
