@@ -28,6 +28,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
 
 " Fuzzy search, don't limited to file, buffer
 Plugin 'Shougo/unite.vim'
