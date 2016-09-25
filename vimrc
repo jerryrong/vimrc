@@ -215,7 +215,8 @@ if has('gui_running')
     let g:solarized_italic=0
 
     if platform == 'mac'
-        colorscheme jellybeans
+        colorscheme gruvbox
+        let g:gruvbox_contrast_light = 'soft'
     else
         colorscheme solarized
     endif
