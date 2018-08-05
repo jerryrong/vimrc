@@ -1,5 +1,7 @@
 *~
 bundle/
+autoload/
+plugged/
 .cache/
 *.pyc
 *.o
