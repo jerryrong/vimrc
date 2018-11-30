@@ -24,6 +24,15 @@ Plug 'Raimondi/delimitMate'
 " Comment
 Plug 'tomtom/tcomment_vim'
 
+" ALE
+Plug 'w0rp/ale'
+
+" Gutentags
+Plug 'ludovicchabant/vim-gutentags'
+
+" Fuzzy finder 
+Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
+
 " Code completion engine
 if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -33,8 +42,10 @@ else
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'zchee/deoplete-jedi'
+Plug 'Shougo/deoplete-clangx'
 
 call plug#end()
 
-source ~/.vim/basic.vim
-source ~/.vim/plugins.vim
+let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+exec 'source ' . s:path . '/basic.vim'
+exec 'source ' . s:path . '/plugins.vim'

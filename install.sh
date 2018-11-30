@@ -1,15 +1,16 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-vim=$HOME/.vim
-vimrc=$HOME/.vimrc
-
-nvim=$HOME/.config/nvim
-nvimrc=$nvim/init.vim
-
+vim_dir=$HOME/.vim
+nvim_dir=$HOME/.config/nvim
 curdir=$(pwd)
 
-ln -s $curdir $vim
-ln -s $curdir $nvim
 
-ln -s $curdir/main.vim $vimrc
-ln -s $curdir/main.vim $nvimrc
+if [ ! -d "$vim_dir" ]; then
+    mkdir -p $vim_dir
+    ln -s -f $curdir $vim_dir
+fi
+
+if [ ! -d "$nvim_dir" ]; then
+    mkdir -p $nvim_dir
+    ln -s -f $curdir/init.vim $nvim_dir/init.vim
+fi
