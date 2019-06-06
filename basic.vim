@@ -116,6 +116,10 @@ else
     set guifont=Fantasque\ Sans\ Mono\ 11.5
 endif
 
+if has('nvim')
+    set guicursor=
+endif
+
 if has('gui_running')
     set guioptions-=T
     set guioptions-=r
