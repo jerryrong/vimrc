@@ -42,16 +42,6 @@ let g:airline_section_b = '%{getcwd()}'
 let delimitMate_expand_cr = 1
 
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#jedi#show_docstring = 1
-
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-call deoplete#custom#var('clangx', 'default_c_options', '-std=c99 -Wall')
-
-
 " ALE
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 
@@ -67,8 +57,19 @@ let g:gutentags_cache_dir = expand('~/.cache/tags')
 
 " LeaderF
 let g:Lf_StlColorscheme = 'powerline'
-let g:Lf_StlSeparator = { 'left': '', 'right': '' }
+let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font':'' }
 let g:Lf_WildIgnore = {
 \   'dir': ['.svn','.git','.hg'],
 \   'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
 \}
+noremap <m-p> :LeaderfFunction<cr>
+
+
+" YouCompleteMe
+set completeopt-=preview
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_semantic_triggers = {
+            \ 'c,cpp,python,go': ['re\w{2}'],
+            \}
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"

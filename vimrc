@@ -34,15 +34,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 
 " Code completion engine
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'zchee/deoplete-jedi'
-Plug 'Shougo/deoplete-clangx'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
