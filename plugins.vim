@@ -5,8 +5,7 @@
 " Color theme
 if has('gui_running')
     set background=light
-    colorscheme gruvbox
-    let g:gruvbox_contrast_light = 'soft'
+    colorscheme solarized
 else
     set t_Co=256
     set background=dark
@@ -51,12 +50,24 @@ let g:ale_cpp_clang_options = '-std=c++11 -Wall'
 
 
 " Gutentags
+set tags=./.tags;,.tags
 let g:gutentags_ctags_tagfile = '.tags'
 let g:gutentags_cache_dir = expand('~/.cache/tags')
 
+let g:gutentags_project_root = ['.git']
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
+
+
 
 " LeaderF
+let g:Lf_ShowRelativePath = 0
+let g:Lf_WindowHeight = 0.30
 let g:Lf_StlColorscheme = 'powerline'
+let g:Lf_PreviewResult = {'Function': 0}
+let g:Lf_WorkingDirectoryMode = 'Ac'
 let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font':'' }
 let g:Lf_WildIgnore = {
 \   'dir': ['.svn','.git','.hg'],
@@ -69,7 +80,7 @@ noremap <m-p> :LeaderfFunction<cr>
 set completeopt-=preview
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_semantic_triggers = {
-            \ 'c,cpp,python,go': ['re\w{2}'],
+            \ 'c,cpp,python,go': ['re!\w{2}'],
             \}
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"

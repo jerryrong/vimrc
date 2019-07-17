@@ -12,7 +12,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 
 " Color themes
-Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 
 " Statusline
