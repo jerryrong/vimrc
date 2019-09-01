@@ -78,9 +78,19 @@ noremap <m-p> :LeaderfFunction<cr>
 
 " YouCompleteMe
 set completeopt-=preview
+let g:ycm_clangd_uses_ycmd_caching = 0
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_semantic_triggers = {
             \ 'c,cpp,python,go': ['re!\w{2}'],
             \}
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+
+" CPP syntax highlight
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:cpp_no_function_highlight = 1

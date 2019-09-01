@@ -35,6 +35,9 @@ Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 " Code completion engine
 Plug 'Valloric/YouCompleteMe'
 
+" Syntax highlight
+Plug 'octol/vim-cpp-enhanced-highlight'
+
 call plug#end()
 
 let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
