@@ -6,3 +6,4 @@ plugged/
 *.pyc
 *.o
 .netrwhist
+.ccls-cache

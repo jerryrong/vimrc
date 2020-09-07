@@ -5,11 +5,13 @@
 " Color theme
 if has('gui_running')
     set background=light
-    colorscheme solarized
+    colorscheme solarized8
 else
-    set t_Co=256
     set background=dark
-    colorscheme solarized
+    " let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    " let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+    colorscheme solarized8
 endif
 
 
@@ -42,9 +44,12 @@ let delimitMate_expand_cr = 1
 
 
 " ALE
+let g:ale_linters_explicit = 1
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
-
-let g:ale_linters = {'c': ['clang'], 'c++': ['clang']}
+let g:ale_linters = {
+\   'c': ['ccls', 'clang'],
+\   'c++': ['ccls', 'clang']
+\}
 let g:ale_c_clang_options = '-std=c99 -Wall'
 let g:ale_cpp_clang_options = '-std=c++11 -Wall'
 
@@ -61,7 +66,6 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
 
 
-
 " LeaderF
 let g:Lf_ShowRelativePath = 0
 let g:Lf_WindowHeight = 0.30
@@ -70,7 +74,7 @@ let g:Lf_PreviewResult = {'Function': 0}
 let g:Lf_WorkingDirectoryMode = 'Ac'
 let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font':'' }
 let g:Lf_WildIgnore = {
-\   'dir': ['.svn','.git','.hg'],
+\   'dir': ['.svn','.git','.hg', '.ccls-cache'],
 \   'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
 \}
 noremap <m-p> :LeaderfFunction<cr>
@@ -86,6 +90,13 @@ let g:ycm_semantic_triggers = {
             \}
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+let g:ycm_language_server = [{
+            \'name': 'ccls',
+            \'cmdline': ['ccls'],
+            \'filetypes': ['c', 'cpp', 'cuda', 'objc', 'objcpp'],
+            \'project_root_files': ['.ccls-root', 'compile_commands.json']
+            \}]
 
 
 " CPP syntax highlight

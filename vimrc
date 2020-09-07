@@ -12,7 +12,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 
 " Color themes
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 " Statusline
 Plug 'vim-airline/vim-airline'
@@ -24,7 +25,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'tomtom/tcomment_vim'
 
 " ALE
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 " Gutentags
 Plug 'ludovicchabant/vim-gutentags'
@@ -37,6 +38,7 @@ Plug 'Valloric/YouCompleteMe'
 
 " Syntax highlight
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
