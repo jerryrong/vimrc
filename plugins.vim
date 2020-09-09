@@ -47,11 +47,11 @@ let delimitMate_expand_cr = 1
 let g:ale_linters_explicit = 1
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let g:ale_linters = {
-\   'c': ['ccls', 'clang'],
-\   'c++': ['ccls', 'clang']
+\   'c': ['ccls'],
+\   'c++': ['ccls']
 \}
-let g:ale_c_clang_options = '-std=c99 -Wall'
-let g:ale_cpp_clang_options = '-std=c++11 -Wall'
+let g:ale_c_cc_options = '-std=c99 -wall'
+let g:ale_cpp_cc_options = '-std=c++17 -wall'
 
 
 " Gutentags
@@ -77,7 +77,7 @@ let g:Lf_WildIgnore = {
 \   'dir': ['.svn','.git','.hg', '.ccls-cache'],
 \   'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
 \}
-noremap <m-p> :LeaderfFunction<cr>
+noremap <leader>p :LeaderfFunction<cr>
 
 
 " YouCompleteMe
