@@ -80,28 +80,51 @@ let g:Lf_WildIgnore = {
 noremap <leader>p :LeaderfFunction<cr>
 
 
-" YouCompleteMe
-set completeopt-=preview
-let g:ycm_clangd_uses_ycmd_caching = 0
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_min_num_identifier_candidate_chars = 2
-let g:ycm_semantic_triggers = {
-            \ 'c,cpp,python,go': ['re!\w{2}'],
-            \}
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-let g:ycm_language_server = [{
-            \'name': 'ccls',
-            \'cmdline': ['ccls'],
-            \'filetypes': ['c', 'cpp', 'cuda', 'objc', 'objcpp'],
-            \'project_root_files': ['.ccls-root', 'compile_commands.json']
-            \}]
-
-
 " CPP syntax highlight
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_concepts_highlight = 1
 let g:cpp_no_function_highlight = 1
+
+
+" Coc
+set updatetime=300
+inoremap <silent><expr> <tab>
+        \ pumvisible() ? "\<c-n>" :
+        \ <SID>check_back_space() ? "\<tab>" :
+        \ coc#refresh()
+inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<c-h>"
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<c-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
+
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)))))
+
+
+" YouCompleteMe
+" set completeopt-=preview
+" let g:ycm_clangd_uses_ycmd_caching = 0
+" let g:ycm_show_diagnostics_ui = 0
+" let g:ycm_min_num_identifier_candidate_chars = 2
+" let g:ycm_semantic_triggers = {
+"             \ 'c,cpp,python,go': ['re!\w{2}'],
+"             \}
+" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+"
+" let g:ycm_language_server = [{
+"             \'name': 'ccls',
+"             \'cmdline': ['ccls'],
+"             \'filetypes': ['c', 'cpp', 'cuda', 'objc', 'objcpp'],
+"             \'project_root_files': ['.ccls-root', 'compile_commands.json']
+"             \}]

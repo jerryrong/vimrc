@@ -34,7 +34,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 
 " Code completion engine
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Syntax highlight
 Plug 'octol/vim-cpp-enhanced-highlight'
