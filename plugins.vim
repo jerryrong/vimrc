@@ -3,14 +3,18 @@
 """"""""""""""""""""""""""""""""""""""""
 
 " Color theme
+if has('termguicolors')
+    set termguicolors
+endif
+
+set bg=dark
 if has('gui_running')
-    set background=light
-    colorscheme solarized8
+    let g:gruvbox_material_backgroud = 'soft'
+    let g:gruvbox_material_disable_italic_comment = 1
+    colorscheme gruvbox-material
 else
-    set background=dark
     " let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     " let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
     colorscheme solarized8
 endif
 
@@ -104,12 +108,25 @@ endfunction
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<c-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
+let g:coc_snippet_next = '<TAB>'
+
 " GoTo code navigation
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+
+" vim-go settings
+let g:go_code_completion_enabled = 0
+let g:go_fmt_command = "goimports"
+let g:go_def_mapping_enabled = 0
+let g:go_metalinter_enabled = []
+
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
 
 " YouCompleteMe
 " set completeopt-=preview

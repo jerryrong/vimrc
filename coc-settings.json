@@ -2,12 +2,20 @@
     "languageserver": {
         "ccls": {
             "command": "ccls",
-            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+            "filetypes": ["c", "cc", "cpp", "objc", "objcpp"],
             "rootPatterns": [".ccls", "compile_commands.json"],
             "initializationOptions": {
                 "cache": {
                     "directory": ".ccls-cache"
                 }
+            }
+        },
+        "golang": {
+            "command":"gopls",
+            "filetypes":["go"],
+            "rootPatterns": ["go.mod"],
+            "initializationOptions": {
+                "usePlaceholders": true
             }
         }
     }

@@ -153,3 +153,15 @@ noremap \ ,
 
 " Remap jj to escape insert mode
 inoremap jj <ESC>
+
+" No arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" Use left and right to switch buffers
+nnoremap <left> :bp<cr>
+nnoremap <right> :bn<cr>

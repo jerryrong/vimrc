@@ -13,13 +13,18 @@ Plug 'junegunn/vim-plug'
 
 " Color themes
 Plug 'lifepillar/vim-solarized8'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'sainnhe/gruvbox-material'
+
+" Syntax highlight
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'sheerun/vim-polyglot'
 
 " Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'Raimondi/delimitMate'
+Plug 'editorconfig/editorconfig-vim'
 
 " Comment
 Plug 'tomtom/tcomment_vim'
@@ -31,15 +36,13 @@ Plug 'dense-analysis/ale'
 Plug 'ludovicchabant/vim-gutentags'
 
 " Fuzzy finder 
-Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
+Plug 'Yggdroot/LeaderF', {'do': ':LeaderfInstallCExtension'}
 
 " Code completion engine
-" Plug 'Valloric/YouCompleteMe'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Syntax highlight
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'sheerun/vim-polyglot'
+" GoLang
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 
 call plug#end()
 
