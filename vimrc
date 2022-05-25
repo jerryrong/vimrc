@@ -44,6 +44,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " GoLang
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 
+" Code format
+Plug 'rhysd/vim-clang-format'
+
 call plug#end()
 
 let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')

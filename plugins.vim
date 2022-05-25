@@ -15,6 +15,7 @@ if has('gui_running')
 else
     " let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     " let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    let g:solarized_italics = 0
     colorscheme solarized8
 endif
 
@@ -94,17 +95,17 @@ let g:cpp_no_function_highlight = 1
 
 " Coc
 set updatetime=300
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~ '\s'
+endfunction
+
 inoremap <silent><expr> <tab>
         \ pumvisible() ? "\<c-n>" :
         \ <SID>check_back_space() ? "\<tab>" :
         \ coc#refresh()
-inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<c-h>"
-
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1] =~# '\s'
-endfunction
-
+inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<c-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
@@ -128,20 +129,8 @@ let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 
-" YouCompleteMe
-" set completeopt-=preview
-" let g:ycm_clangd_uses_ycmd_caching = 0
-" let g:ycm_show_diagnostics_ui = 0
-" let g:ycm_min_num_identifier_candidate_chars = 2
-" let g:ycm_semantic_triggers = {
-"             \ 'c,cpp,python,go': ['re!\w{2}'],
-"             \}
-" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-"
-" let g:ycm_language_server = [{
-"             \'name': 'ccls',
-"             \'cmdline': ['ccls'],
-"             \'filetypes': ['c', 'cpp', 'cuda', 'objc', 'objcpp'],
-"             \'project_root_files': ['.ccls-root', 'compile_commands.json']
-"             \}]
+
+" clang-format
+let g:clang_format#auto_format = 1
+let g:clang_format#enable_fallback_style = 0
+
