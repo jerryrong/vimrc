@@ -62,7 +62,7 @@ let g:ale_cpp_cc_options = '-std=c++17 -wall'
 " Gutentags
 set tags=./.tags;,.tags
 let g:gutentags_ctags_tagfile = '.tags'
-let g:gutentags_cache_dir = expand('~/.cache/tags')
+" let g:gutentags_cache_dir = expand('~/.cache/tags')
 
 let g:gutentags_project_root = ['.git']
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
@@ -72,16 +72,24 @@ let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
 
 
 " LeaderF
+" let g:Lf_WindowPosition = 'popup'
+" let g:Lf_PopupColorscheme = 'solarized'
+let g:Lf_PreviewInPopup = 1
+let g:Lf_WindowHeight = 0.3
 let g:Lf_ShowRelativePath = 0
-let g:Lf_WindowHeight = 0.30
-let g:Lf_StlColorscheme = 'powerline'
 let g:Lf_PreviewResult = {'Function': 0}
 let g:Lf_WorkingDirectoryMode = 'Ac'
-let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font':'' }
+let g:Lf_StlColorscheme = 'solarized'
+let g:Lf_StlSeparator = { 'left': '', 'right': '' }
 let g:Lf_WildIgnore = {
 \   'dir': ['.svn','.git','.hg', '.ccls-cache'],
 \   'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
 \}
+
+let g:Lf_GtagsAutoGenerate = 0
+let g:Lf_GtagsGutentags = 1
+let g:Lf_CacheDirectory = expand('~')
+let g:gutentags_cache_dir = expand(g:Lf_CacheDirectory.'/.LfCache/gtags')
 noremap <leader>p :LeaderfFunction<cr>
 
 
@@ -95,19 +103,21 @@ let g:cpp_no_function_highlight = 1
 
 " Coc
 set updatetime=300
+set completeopt=menu,menuone,popup
 
-function! s:check_back_space() abort
+function! CheckBackspace() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1] =~ '\s'
 endfunction
 
-inoremap <silent><expr> <tab>
-        \ pumvisible() ? "\<c-n>" :
-        \ <SID>check_back_space() ? "\<tab>" :
+inoremap <silent><expr> <TAB>
+        \ coc#pum#visible() ? coc#pum#next(1) :
+        \ CheckBackspace() ? "\<tab>" :
         \ coc#refresh()
-inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<c-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
+inoremap <expr><s-tab> coc#pum#visible() ? coc#pum#prev(1) : "\<s-tab>"
+
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() :
+                              \ "\<c-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 
 let g:coc_snippet_next = '<TAB>'
 
@@ -128,9 +138,3 @@ let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
-
-
-" clang-format
-let g:clang_format#auto_format = 1
-let g:clang_format#enable_fallback_style = 0
-

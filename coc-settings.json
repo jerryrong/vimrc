@@ -18,5 +18,6 @@
                 "usePlaceholders": true
             }
         }
-    }
+    },
+    "coc.preferences.formatOnSave": true
 }
