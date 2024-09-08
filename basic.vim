@@ -4,22 +4,11 @@
 set nocompatible
 filetype plugin indent on
 
-function! GetRunningOS()
-    let os=substitute(system('uname'), '\n', '', '')
-    if os == 'Darwin' || os == 'Mac'
-        return 'mac'
-    elseif os == 'Linux'
-        return 'linux'
-    endif
-endfunction
-
-let platform=GetRunningOS()
-
 " Rebind <Leader> key
 let mapleader = ","
 
 set backspace=indent,eol,start
-if platform == 'mac'
+if has('mac') || has('win32')
     set clipboard=unnamed
 else
     set clipboard=unnamedplus
@@ -68,9 +57,9 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese,cp936,latin-1
 set fileencoding=utf-8
 
-if platform == 'linux'
+if has('linux')
     language messages en_US.utf8
-elseif platform == 'mac'
+elseif has('mac')
     language messages en_US.UTF-8
 endif
 
@@ -110,12 +99,6 @@ set autoindent
 set shortmess=filnxtToOI
 
 " Fonts and colors
-if platform == 'mac'
-    set guifont=Monaco\ for\ Powerline:h11
-else
-    set guifont=Fantasque\ Sans\ Mono\ 11.5
-endif
-
 if has('nvim')
     set guicursor=
 endif
@@ -128,6 +111,10 @@ if has('gui_running')
 
     set lines=100
     set columns=88
+
+    if has('win32')
+        set guifont=CaskaydiaCove_NFM:h13:cANSI:qDRAFT
+    endif
 endif
 
 

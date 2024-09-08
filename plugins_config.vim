@@ -8,14 +8,16 @@ if has('termguicolors')
 endif
 
 set bg=dark
+let g:solarized_old_cursor_style = 1
+let g:solarized_italics = 0
+let g:gruvbox_material_background = 'soft'
+let g:gruvbox_material_disable_italic_comment = 1
+
 if has('gui_running')
-    let g:gruvbox_material_background = 'soft'
-    let g:gruvbox_material_disable_italic_comment = 1
     colorscheme gruvbox-material
 else
     " let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     " let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    let g:solarized_italics = 0
     colorscheme solarized8
 endif
 
